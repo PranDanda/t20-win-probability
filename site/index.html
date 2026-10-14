@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who's winning? T20 win probability, ball by ball</title>
+<meta name="description" content="Ball-by-ball win probability for 2,420 T20 matches, from a model tested on matches it never saw and benchmarked against the Betfair market.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Who's winning?</a>
+  <nav aria-label="Sections">
+    <a href="#matches">Matches</a>
+    <a href="#accuracy">How good is it</a>
+    <a href="#method">How it works</a>
+    <a href="https://github.com/PranDanda/t20-win-probability">Code</a>
+  </nav>
+</header>
+
+<main>
+  <section class="board" aria-labelledby="hero-title">
+    <div class="board-inner">
+      <h1 id="hero-title">Punjab Kings were 0.6% to win. Then they bowled KKR out for 95.</h1>
+      <p class="lede">Every ball of 2,420 T20 matches from 2024 to 2026, scored by a model that never saw the result. Hover over or tap the line to see what happened, ball by ball.</p>
+      <div id="hero-chart" class="chart chart-board" role="img" aria-label="Win probability chart for Punjab Kings v Kolkata Knight Riders, IPL, 15 April 2025"></div>
+      <p class="board-foot" id="hero-foot"></p>
+    </div>
+  </section>
+
+  <section id="matches" class="band" aria-labelledby="matches-title">
+    <h2 id="matches-title">Pick a match</h2>
+    <div class="controls">
+      <label>Competition
+        <select id="f-comp"><option value="">All</option></select>
+      </label>
+      <label>Team
+        <input id="f-team" type="search" placeholder="e.g. India, Somerset" autocomplete="off">
+      </label>
+      <label>Order
+        <select id="f-sort">
+          <option value="date">Newest first</option>
+          <option value="comeback">Biggest comebacks</option>
+          <option value="drama">Closest contests</option>
+        </select>
+      </label>
+    </div>
+    <div class="explorer">
+      <ol id="match-list" class="match-list" aria-label="Matches"></ol>
+      <div class="detail" id="detail" aria-live="polite">
+        <p class="empty">Choose a match from the list to see how it swung.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="accuracy" class="band" aria-labelledby="acc-title">
+    <h2 id="acc-title">How good is it?</h2>
+    <p class="wide">The model was frozen before it saw any 2025–26 match, then scored once on all 1,539 of them. Lower log loss is better; it punishes confident wrong calls hardest.</p>
+    <table class="results" id="results-table">
+      <caption>Out-of-sample results, 1,539 matches from January 2025 to October 2026</caption>
+      <thead><tr><th scope="col">Model</th><th scope="col">Log loss</th><th scope="col">Called the winner</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="wide note">That table is the original model, version 1, exactly as it was frozen. The test exposed one weakness: with one or two wickets left, it was too sure the chasing side would get home. The lines on this site come from version 2, which adds how many runs a side can still expect from its balls and wickets left. Version 2 scores 0.4445 on the same matches, but it was built after seeing them, so it doesn't replace the headline.</p>
+    <div class="two">
+      <figure>
+        <div id="cal-chart" class="chart chart-sq" role="img" aria-label="Calibration chart: predicted against actual win rate"></div>
+        <figcaption>When the model says 70%, the team should win about 7 times in 10. Points on the diagonal mean it does.</figcaption>
+      </figure>
+      <div class="market">
+        <h3>Against the betting market</h3>
+        <p id="market-text"></p>
+        <p>So this isn't a tool for beating bookmakers. Its value is showing <em>why</em> a match swung, which a price can't tell you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="method" class="band" aria-labelledby="method-title">
+    <h2 id="method-title">How it works</h2>
+    <ol class="steps">
+      <li><strong>The data.</strong> 1.99 million deliveries from 8,694 men's T20 matches since 2005, from Cricsheet: internationals, IPL, Big Bash, PSL, CPL, SA20, T20 Blast and Syed Mushtaq Ali.</li>
+      <li><strong>The match state.</strong> Before every ball: balls left, wickets in hand, runs, run rates and, in a chase, runs needed.</li>
+      <li><strong>The context.</strong> Team strength (an Elo rating tuned for home advantage and winning margins), each ground's par score and chase record, and the scoring era. All of it built only from matches played earlier.</li>
+      <li><strong>The models.</strong> A logistic regression and a gradient-boosted tree model for each innings, averaged. The trees are told that more wickets in hand can only help.</li>
+      <li><strong>The test.</strong> Trained on 2005–2024, tuned on 2024, then scored once on 2025–26 with the success criteria written down beforehand.</li>
+      <li><strong>The fix.</strong> Version 2 adds the runs a side can still expect from its balls and wickets left, which calms the model down when a chase is down to the tail. Rare collapses still catch it out: KKR needed 17 from 34 balls with two wickets left, and it gave them 97%.</li>
+    </ol>
+    <p class="wide">The full reasoning, including the experiments that failed, is in the <a href="https://github.com/PranDanda/t20-win-probability/blob/main/LEARNING_NOTES.md">project notes</a>.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Ball-by-ball data from <a href="https://cricsheet.org">Cricsheet</a>, used under the Open Data Commons Attribution Licence. Market comparison uses Betfair historic data; no prices are published here. Not betting advice.</p>
+</footer>
+
+<div id="tip" class="tip" role="status" hidden></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

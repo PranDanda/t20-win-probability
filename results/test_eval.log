@@ -1,0 +1,44 @@
+TEST: 1,539 matches, 343,227 balls, 2025-01-01 to 2026-10-06
+
+Overall (test 2025-26):
+                           log_loss   brier  accuracy     ECE
+model                                                        
+coin flip                    0.6931  0.2500    0.4834  0.0166
+lookup table                 0.5156  0.1738    0.7319  0.0151
+logistic, scoreboard only    0.4858  0.1647    0.7433  0.0059
+FINAL model                  0.4448  0.1482    0.7751  0.0146
+
+Log loss by slice:
+    slice      value  balls  coin flip  lookup table  logistic, scoreboard only  FINAL model  final_minus_scoreboard
+  innings          1 182146     0.6931        0.6069                     0.6021       0.5514                 -0.0507
+  innings          2 161081     0.6931        0.4123                     0.3543       0.3243                 -0.0300
+pre-match first ball   1539     0.6931        0.6918                     0.6936       0.6332                 -0.0604
+    phase  powerplay 110591     0.6931        0.5808                     0.5598       0.5079                 -0.0520
+    phase     middle 160241     0.6931        0.4959                     0.4630       0.4259                 -0.0371
+    phase      death  72395     0.6931        0.4594                     0.4230       0.3904                 -0.0326
+   league        bbl  14428     0.6931        0.5683                     0.5584       0.5477                 -0.0107
+   league        cpl  14678     0.6931        0.5368                     0.5205       0.5310                  0.0104
+   league        ipl  31611     0.6931        0.5918                     0.5959       0.5492                 -0.0467
+   league        ntb  53837     0.6931        0.5314                     0.5207       0.5049                 -0.0158
+   league        psl  16438     0.6931        0.5441                     0.5213       0.5105                 -0.0108
+   league        sat  12625     0.6931        0.4991                     0.4818       0.4977                  0.0159
+   league       t20s 199610     0.6931        0.4925                     0.4484       0.3896                 -0.0588
+
+Pre-registered success criteria:
+  1. beats lookup and scoreboard-only logistic: PASS
+  2. calibration error < 2% (got 1.46%): PASS
+  3. no slice worse than scoreboard-only by > 0.01 (worst +0.0159, sat): FAIL
+
+Calibration of the final model on test:
+                   n   pred  actual
+p_final                            
+(-0.001, 0.1]  49491  0.036   0.020
+(0.1, 0.2]     28777  0.150   0.120
+(0.2, 0.3]     30318  0.251   0.247
+(0.3, 0.4]     32597  0.350   0.330
+(0.4, 0.5]     33748  0.450   0.436
+(0.5, 0.6]     34057  0.550   0.537
+(0.6, 0.7]     32543  0.650   0.641
+(0.7, 0.8]     31555  0.750   0.753
+(0.8, 0.9]     29399  0.849   0.872
+(0.9, 1.0]     40742  0.965   0.981

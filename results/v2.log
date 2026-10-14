@@ -1,0 +1,32 @@
+Expected runs remaining (from 2005-23 first innings), selected cells:
+wickets_in_hand     10     6     4     2     1 
+balls_left                                     
+120              158.6  133.3  70.0  29.8  12.3
+60                99.1   76.8  54.0  29.8  12.3
+33                62.3   52.1  39.1  22.5  11.7
+18                35.7   32.4  27.3  17.6   9.1
+6                 12.3   11.8  10.8   8.1   5.3
+
+Validation 2024 overall log loss: v1 0.4685, v2 0.4689 (change +0.0004); trees {1: 76, 2: 101}
+  v1: tail slice log loss 0.3622
+                 balls  matches  actual  model
+wickets_in_hand                               
+1                  158       42   0.000  0.111
+2                  406       78   0.271  0.351
+3                  560      112   0.382  0.380
+  v2: tail slice log loss 0.3365
+                 balls  matches  actual  model
+wickets_in_hand                               
+1                  158       42   0.000  0.050
+2                  406       78   0.271  0.316
+3                  560      112   0.382  0.379
+
+Acceptance rule: tail slice improved (0.3622 -> 0.3365) and overall within +0.001: ACCEPT
+
+Test 2025-26 (POST-TEST, already seen): v1 0.4448, v2 0.4445
+
+PBKS v KKR check (KKR chasing):
+ balls_bowled  wickets_in_hand  runs_needed  exp_runs_left  need_ratio
+           60                6         40.0      76.360001        0.52
+           86                2         17.0      23.219999        0.73
+  v2 KKR win chance: [0.988 0.973]

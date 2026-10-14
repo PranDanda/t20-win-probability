@@ -1,0 +1,22 @@
+P(score >= need) from 2005-23 first innings, 34 balls left:
+       1     2     3     6
+10  0.47  0.78  0.93  1.00
+17  0.27  0.59  0.80  1.00
+25  0.12  0.41  0.66  0.98
+40  0.05  0.17  0.29  0.81
+
+Validation 2024 log loss: v1 0.4685, v2 0.4689, v3 0.4683; trees {1: 76, 2: 105}
+  v2: tail slice log loss 0.3365
+                 balls  matches  actual  model
+wickets_in_hand                               
+1                  158       42   0.000  0.050
+2                  406       78   0.271  0.316
+3                  560      112   0.382  0.379
+  v3: tail slice log loss 0.3407
+                 balls  matches  actual  model
+wickets_in_hand                               
+1                  158       42   0.000  0.057
+2                  406       78   0.271  0.313
+3                  560      112   0.382  0.373
+
+Acceptance: tail 0.3365 -> 0.3407, overall vs v1 -0.0002: REJECT

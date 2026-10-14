@@ -1,0 +1,15 @@
+week4 baseline               all 0.4768 inn1 0.5779 inn2 0.3621 pre-match 0.6568
+A set batters & momentum     all 0.4771 inn1 0.5764 inn2 0.3644 pre-match 0.6559
+B first-innings shape        all 0.4771 inn1 0.5779 inn2 0.3627 pre-match 0.6568
+C toss & home                all 0.4787 inn1 0.5788 inn2 0.3651 pre-match 0.6560
+D Elo v2 (replaces Elo)      all 0.4727 inn1 0.5686 inn2 0.3639 pre-match 0.6438
+all four                     all 0.4724 inn1 0.5689 inn2 0.3628 pre-match 0.6421
+
+Change vs week 4 baseline (negative = better):
+                             all  innings 1  innings 2  pre-match  powerplay  middle   death
+variant                                                                                     
+A set batters & momentum  0.0003    -0.0015     0.0023    -0.0010    -0.0003  0.0009 -0.0002
+B first-innings shape     0.0003     0.0000     0.0006     0.0000     0.0008  0.0001 -0.0003
+C toss & home             0.0019     0.0009     0.0030    -0.0008     0.0012  0.0024  0.0017
+D Elo v2 (replaces Elo)  -0.0041    -0.0093     0.0018    -0.0130    -0.0062 -0.0030 -0.0033
+all four                 -0.0044    -0.0090     0.0007    -0.0147    -0.0081 -0.0026 -0.0029

@@ -1,0 +1,63 @@
+{
+  "trained_on": "all usable matches 2005-01-01 to 2024-12-31",
+  "created": "2026-10-12",
+  "combine": "mean of logistic and lightgbm",
+  "calibration": "none",
+  "innings": {
+    "1": {
+      "rows": 764055,
+      "matches": 6430,
+      "lightgbm_features": [
+        "balls_left",
+        "wickets_in_hand",
+        "runs",
+        "current_rr",
+        "elo2_diff",
+        "venue_par",
+        "venue_chase_rate",
+        "comp_level",
+        "pace_vs_par",
+        "striker_rpb",
+        "non_striker_rpb"
+      ],
+      "lightgbm_trees": 74,
+      "logistic_extra_features": [
+        "elo2_diff",
+        "venue_par",
+        "venue_chase_rate",
+        "comp_level",
+        "pace_vs_par",
+        "striker_rpb",
+        "non_striker_rpb"
+      ]
+    },
+    "2": {
+      "rows": 695347,
+      "matches": 6430,
+      "lightgbm_features": [
+        "balls_left",
+        "wickets_in_hand",
+        "runs_needed",
+        "required_rr",
+        "current_rr",
+        "elo2_diff",
+        "venue_par",
+        "venue_chase_rate",
+        "comp_level",
+        "target_vs_par",
+        "striker_rpb",
+        "non_striker_rpb"
+      ],
+      "lightgbm_trees": 125,
+      "logistic_extra_features": [
+        "elo2_diff",
+        "venue_par",
+        "venue_chase_rate",
+        "comp_level",
+        "target_vs_par",
+        "striker_rpb",
+        "non_striker_rpb"
+      ]
+    }
+  }
+}

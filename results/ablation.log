@@ -1,0 +1,13 @@
+week4 (context)  seed 7: all 0.4768 | inn1 0.5779 inn2 0.3621 | death 0.4256
+week4 (context)  seed 8: all 0.4768 | inn1 0.5768 inn2 0.3632 | death 0.4253
+week4 (context)  seed 9: all 0.4764 | inn1 0.5767 inn2 0.3627 | death 0.4249
++ bowling        seed 7: all 0.4756 | inn1 0.5749 inn2 0.3628 | death 0.4250
++ batting        seed 7: all 0.4768 | inn1 0.5762 inn2 0.3640 | death 0.4273
++ both           seed 7: all 0.4753 | inn1 0.5750 inn2 0.3622 | death 0.4266
+
+Seed noise in the baseline (max - min): {'all': np.float64(0.0004), 'innings 1': np.float64(0.0012), 'innings 2': np.float64(0.0011), 'powerplay': np.float64(0.0004), 'middle': np.float64(0.0003), 'death': np.float64(0.0007)}
+
+Change vs baseline (seed 7); negative = better:
+  + bowling    {'all': np.float64(-0.0012), 'innings 1': np.float64(-0.0029), 'innings 2': np.float64(0.0007), 'powerplay': np.float64(-0.0033), 'middle': np.float64(-0.0001), 'death': np.float64(-0.0006)}
+  + batting    {'all': np.float64(-0.0), 'innings 1': np.float64(-0.0017), 'innings 2': np.float64(0.0019), 'powerplay': np.float64(-0.0025), 'middle': np.float64(0.0009), 'death': np.float64(0.0017)}
+  + both       {'all': np.float64(-0.0015), 'innings 1': np.float64(-0.0029), 'innings 2': np.float64(0.0001), 'powerplay': np.float64(-0.006), 'middle': np.float64(0.0005), 'death': np.float64(0.001)}

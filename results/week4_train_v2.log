@@ -1,0 +1,37 @@
+innings 1 lr_state       2.4s
+innings 1 lr_context     2.3s
+innings 1 lgb_state      3.3s, 62 trees
+innings 1 lgb_context    4.8s, 74 trees
+innings 2 lr_state       3.5s
+innings 2 lr_context     3.6s
+innings 2 lgb_state      7.3s, 239 trees
+innings 2 lgb_context    8.7s, 125 trees
+
+Validation (2024) log loss:
+model                  lr_state  lr_context  lgb_state  lgb_context
+scope                                                              
+all                      0.5055      0.4701     0.5013       0.4720
+innings 1                0.6130      0.5675     0.6127       0.5688
+innings 2                0.3835      0.3595     0.3749       0.3621
+powerplay                0.5776      0.5330     0.5745       0.5336
+middle                   0.4812      0.4486     0.4749       0.4521
+death                    0.4488      0.4214     0.4475       0.4216
+innings 1, first ball    0.6926      0.6502     0.6956       0.6435
+
+Feature importance (share of total gain), LightGBM + context:
+innings               1      2
+feature                       
+balls_left        0.000  0.000
+comp_level        0.070  0.023
+current_rr        0.361  0.037
+elo2_diff         0.165  0.028
+non_striker_rpb   0.003  0.012
+pace_vs_par       0.154    NaN
+required_rr         NaN  0.648
+runs              0.028    NaN
+runs_needed         NaN  0.065
+striker_rpb       0.005  0.011
+target_vs_par       NaN  0.056
+venue_chase_rate  0.077  0.028
+venue_par         0.059  0.028
+wickets_in_hand   0.078  0.062

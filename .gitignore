@@ -1,0 +1,12 @@
+# Raw and processed data are rebuilt locally (Cricsheet zips are ~700MB unzipped)
+/data/
+# Betfair-derived files must never be published (personal-use licence)
+results/market_paper_bets.csv
+results/market_prematch_rows.parquet
+results/market_inplay_alignment.csv
+results/*.parquet
+# Python / OS clutter
+__pycache__/
+*.pyc
+.DS_Store
+.venv/

@@ -1,0 +1,38 @@
+Group A...
+Group B...
+Group C...
+Group D...
+Elo tuning on TRAIN-period matches (Elo's own pre-match log loss):
+  week 4 settings (K=24, no home, no margin, no regression): 0.6771
+ K  home_adv  margin  season_regress  train_logloss
+24        30    True            0.25         0.6717
+32        30    True            0.25         0.6725
+16        30    True            0.25         0.6727
+16        30    True            0.00         0.6727
+24        30    True            0.50         0.6729
+
+Rows 1,802,629. Missing share by innings:
+innings                   1    2
+striker_faced           0.0  0.0
+non_striker_faced       0.0  0.0
+partnership_runs        0.0  0.0
+runs_last18             0.0  0.0
+wkts_last18             0.0  0.0
+fi_wkts_lost            1.0  0.0
+fi_dot_share            1.0  0.0
+fi_last5_runs           1.0  0.0
+bat_won_toss            0.0  0.0
+venue_familiarity_diff  0.0  0.0
+elo2_diff               0.0  0.0
+                          mean     min     max
+striker_faced           12.550    0.00   78.00
+non_striker_faced       12.566    0.00   78.00
+partnership_runs        19.887    0.00  229.00
+runs_last18             21.351    0.00   87.00
+wkts_last18              0.825    0.00    7.00
+fi_wkts_lost             6.503    0.00   10.00
+fi_dot_share             0.353    0.15    0.88
+fi_last5_runs           48.122    0.00  112.00
+bat_won_toss             0.497    0.00    1.00
+venue_familiarity_diff   0.000   -1.00    1.00
+elo2_diff               -0.873 -419.55  419.55

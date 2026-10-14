@@ -1,0 +1,11 @@
+Matches with usable in-play prices: 1,034
+Alignment check: median best shift +6 min; share with |shift| <= 3 min: 29.3%; median best correlation 0.890
+
+All aligned balls (233,614): model 0.4758, market 0.4725
+ innings     phase  balls  model  market
+       1 powerplay  37224 0.6401  0.5821
+       1    middle  55710 0.5787  0.5356
+       1     death  29833 0.5522  0.5092
+       2 powerplay  37197 0.4530  0.4627
+       2    middle  53488 0.3254  0.3870
+       2     death  20162 0.2161  0.2865

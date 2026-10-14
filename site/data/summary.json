@@ -1,0 +1,92 @@
+{
+ "model_version": "v2",
+ "v2_test_log_loss": 0.4445,
+ "test_matches": 1539,
+ "test": {
+  "coin flip": {
+   "log_loss": 0.6931,
+   "accuracy": 0.4834
+  },
+  "lookup table": {
+   "log_loss": 0.5156,
+   "accuracy": 0.7319
+  },
+  "logistic, scoreboard only": {
+   "log_loss": 0.4858,
+   "accuracy": 0.7433
+  },
+  "FINAL model": {
+   "log_loss": 0.4448,
+   "accuracy": 0.7751
+  }
+ },
+ "calibration": [
+  {
+   "pred": 0.0358,
+   "actual": 0.0199,
+   "n": 49491
+  },
+  {
+   "pred": 0.1497,
+   "actual": 0.1199,
+   "n": 28777
+  },
+  {
+   "pred": 0.2508,
+   "actual": 0.2474,
+   "n": 30318
+  },
+  {
+   "pred": 0.3502,
+   "actual": 0.3298,
+   "n": 32597
+  },
+  {
+   "pred": 0.4499,
+   "actual": 0.4361,
+   "n": 33748
+  },
+  {
+   "pred": 0.5497,
+   "actual": 0.537,
+   "n": 34057
+  },
+  {
+   "pred": 0.6496,
+   "actual": 0.6413,
+   "n": 32543
+  },
+  {
+   "pred": 0.75,
+   "actual": 0.753,
+   "n": 31555
+  },
+  {
+   "pred": 0.8492,
+   "actual": 0.8717,
+   "n": 29399
+  },
+  {
+   "pred": 0.9646,
+   "actual": 0.9811,
+   "n": 40742
+  }
+ ],
+ "market": {
+  "all": {
+   "matches": 1110,
+   "model": 0.6501,
+   "market": 0.5648
+  },
+  "franchise leagues": {
+   "matches": 590,
+   "model": 0.6983,
+   "market": 0.6761
+  },
+  "T20 internationals": {
+   "matches": 520,
+   "model": 0.5953,
+   "market": 0.4386
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "trained_on": "2005-2024",
+  "adds": {
+    "1": [
+      "exp_runs_left",
+      "res_projected"
+    ],
+    "2": [
+      "exp_runs_left",
+      "need_ratio"
+    ]
+  },
+  "trees": {
+    "1": 76,
+    "2": 101
+  },
+  "note": "post-test fix; 2025-26 scores are not out-of-sample for model design"
+}

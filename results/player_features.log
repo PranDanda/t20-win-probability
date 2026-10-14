@@ -1,0 +1,13 @@
+Reading team sheets...
+  192,030 player-match rows
+Allocating remaining bowling overs...
+Batting resources...
+
+Rows 1,802,629; missing share: {'bowl_now_econ': 0.0, 'bowl_now_wkt': 0.0, 'rem_bowl_econ': 0.0, 'rem_bowl_wkt': 0.0, 'bat_res_avg': 0.0, 'bat_res_sr': 0.0}
+                  mean     std     min      max
+bowl_now_econ    1.290   0.111   0.820    1.748
+bowl_now_wkt     0.053   0.009   0.021    0.104
+rem_bowl_econ    1.256   0.077   0.829    1.565
+rem_bowl_wkt     0.051   0.006   0.023    0.094
+bat_res_avg    161.342  54.390  13.923  317.710
+bat_res_sr       1.208   0.052   0.866    1.423
